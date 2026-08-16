@@ -8,8 +8,10 @@
 :root{
     /* basic 2-bit palette from 1bit Monitor Glow Palette by Polyducks */
     /* https://lospec.com/palette-list/1bit-monitor-glow */
-    --colour-1: #222323;
+    --colour-1: #4c3f30;
     --colour-2: #f0f6f0;
+    --colour-link: #569c54;
+    --colour-link-hover: #545471;
 }
 
 /* this swaps the colour order to account for user's OS dark mode */
@@ -32,6 +34,10 @@ body {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+}
+
+b {
+    font-weight: 600;
 }
 
 header {
@@ -61,6 +67,52 @@ main {
     align-items: center;
 }
 
+a {
+    color: var(--colour-link);
+}
+
+a:visited {
+    color: var(--colour-link);
+}
+
+a:hover,
+a:focus-visible {
+    color: var(--colour-link-hover);
+}
+
+section {
+    max-width: 80rch;
+}
+
+section + section {
+    border-top: 1px solid var(--colour-1);
+    margin-block-start: 2rem;
+    padding-block-start: 2rem;
+}
+
+.image-row {
+    display: flex;
+    gap: 1rem;
+    margin-block: 1rem;
+    justify-content: center;
+}
+
+.image-row img {
+    height: auto;
+    display: block;
+    flex: 0 1 calc(50% - 0.5rem);
+    max-width: calc(50% - 0.5rem);
+}
+
+.image-row img:only-child {
+    flex-basis: min(70%, 32rem);
+    max-width: min(70%, 32rem);
+}
+
+.firstSectionHeading {
+    margin-top: 0;
+}
+
 aside {
     visibility: hidden;
     flex: 1;
@@ -78,6 +130,10 @@ footer {
 /*https://alistapart.com/article/axiomatic-css-and-lobotomized-owls/*/
 .prose > * + * {
     margin-block-start: var(--prose-flow, 1em);
+}
+
+h3 + * {
+    margin-block-start: 0.4rem;
 }
 
 /* breakpoints from Material Design Spec https://m3.material.io/foundations/layout/breakpoints/overview */
@@ -128,5 +184,12 @@ footer {
 }
 /* compact breakpoint : phone in portrait */
 @media (width < 600px) {
+    .image-row {
+        flex-direction: column;
+    }
 
+    .image-row img {
+        flex-basis: 100%;
+        max-width: 100%;
+    }
 }
