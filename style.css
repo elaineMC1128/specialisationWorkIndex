@@ -1,10 +1,5 @@
-/*!!!!!*/
-/*add in your own font imports here*/
-/*remember to update them in the rest of the CSS : eg the body selector*/
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
-/*!!!!!*/
-/*change out, and/or add colours to the colour scheme*/
 :root{
     /* basic 2-bit palette from 1bit Monitor Glow Palette by Polyducks */
     /* https://lospec.com/palette-list/1bit-monitor-glow */
@@ -15,12 +10,10 @@
 }
 
 /* this swaps the colour order to account for user's OS dark mode */
-/*!!!!!*/
-/*remember to update the colours here too to reflect the above changes*/
 @media (prefers-color-scheme: dark) {
     :root{
         --colour-1: #f0f6f0;
-        --colour-2: #222323;
+        --colour-2: #4c3f30;
     }
 }
 
