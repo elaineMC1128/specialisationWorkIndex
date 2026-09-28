@@ -83,6 +83,12 @@ section + section {
     padding-block-start: 2rem;
 }
 
+.peer-testing-link {
+    border-top: none;
+    margin-block-start: 5rem;
+    padding-block-start: 0;
+}
+
 .image-row {
     display: flex;
     gap: 1rem;
@@ -100,6 +106,49 @@ section + section {
 .image-row img:only-child {
     flex-basis: min(70%, 32rem);
     max-width: min(70%, 32rem);
+}
+
+.reference-figure {
+    margin-block: 1rem;
+    text-align: center;
+}
+
+.reference-figure img {
+    display: block;
+    width: min(70%, 32rem);
+    height: auto;
+    margin-inline: auto;
+}
+
+.reference-figure figcaption {
+    color: #808080;
+    font-size: 0.85rem;
+    font-style: italic;
+    margin-block-start: 0.4rem;
+}
+
+.section-note {
+    color: #808080;
+    font-size: 0.85rem;
+    font-style: italic;
+}
+
+.radial-reference img {
+    width: min(50%, 22rem);
+}
+
+.reference-figure-row {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.reference-figure-row .reference-figure {
+    flex: 1;
+}
+
+.reference-figure-row .reference-figure img {
+    width: 100%;
 }
 
 .firstSectionHeading {
@@ -184,5 +233,14 @@ h3 + * {
     .image-row img {
         flex-basis: 100%;
         max-width: 100%;
+    }
+
+    .reference-figure-row {
+        flex-direction: column;
+    }
+
+    .reference-figure-row .reference-figure {
+        width: 100%;
+        flex: none;
     }
 }
