@@ -85,8 +85,20 @@ section + section {
 
 .peer-testing-link {
     border-top: none;
-    margin-block-start: 5rem;
+    margin-block-start: 4rem;
     padding-block-start: 0;
+    transform: translateY(1rem);
+}
+
+.ai-statement {
+    color: color-mix(in srgb, var(--colour-1) 75%, var(--colour-2));
+    font-size: 0.95rem;
+    margin-block-start: 5rem;
+}
+
+.ai-statement p {
+    max-width: 100ch;
+    line-height: 1.5;
 }
 
 .image-row {
