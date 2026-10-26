@@ -368,6 +368,19 @@ h3 + * {
     margin-block-start: 1rem;
 }
 
+.documentation-feature-list {
+    margin-block: 1rem;
+    padding-inline-start: 2.5rem;
+}
+
+.documentation-feature-list li {
+    padding-inline-start: 0.5rem;
+}
+
+.documentation-feature-list li + li {
+    margin-block-start: 0.75rem;
+}
+
 @media (width < 840px) {
     .mainNavContainer nav {
         position: static;
@@ -387,4 +400,36 @@ h3 + * {
     .mainNavContainer aside {
         flex: 0 0 0;
     }
+}
+
+
+/* Project documentation details */
+.documentation-code-image {
+    width: 92%;
+    height: auto;
+    margin-inline: auto;
+}
+
+.documentation-table-wrap {
+    max-width: 100%;
+    overflow-x: auto;
+    margin-block: 1rem;
+}
+
+.documentation-page table {
+    width: 100%;
+    min-width: 34rem;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.documentation-page th,
+.documentation-page td {
+    padding: 0.6rem 0.75rem;
+    border: 1px solid var(--colour-1);
+    vertical-align: top;
+}
+
+.documentation-page thead {
+    background: color-mix(in srgb, var(--colour-link) 18%, var(--colour-2));
 }

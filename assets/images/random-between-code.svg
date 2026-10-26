@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="570" viewBox="0 0 1500 570" role="img" aria-label="Code window showing the randomBetween function">
+  <rect x="36" y="30" width="1428" height="510" rx="23" fill="#263238"/>
+  <circle cx="120" cy="96" r="23" fill="#FF5B57"/>
+  <circle cx="175" cy="96" r="23" fill="#FFBD2E"/>
+  <circle cx="230" cy="96" r="23" fill="#28C840"/>
+  <g font-family="DejaVu Sans Mono, monospace" font-size="43" font-weight="400" fill="#C0C3CA" xml:space="preserve">
+    <text x="102" y="240"><tspan fill="#CF8C69">function</tspan><tspan> </tspan><tspan fill="#48A2F4">randomBetween</tspan><tspan>(min, max) {</tspan></text>
+    <text x="102" y="334"><tspan>    </tspan><tspan fill="#CF8C69">return</tspan><tspan> min + </tspan><tspan fill="#BD77B7" font-style="italic">Math</tspan><tspan>.</tspan><tspan fill="#48A2F4">random</tspan><tspan>() * (max - min);</tspan></text>
+    <text x="102" y="428">}</text>
+  </g>
+</svg>

@@ -23,19 +23,63 @@
     <main class="documentation-page">
         <section>
             <h2 class="firstSectionHeading">Core Interactive Features</h2>
-            <p class="assignment-placeholder">Add an overview of how the finished instrument works and why these interactions suit young children.</p>
 
-            <h3>Onboarding and Guidance</h3>
-            <p class="assignment-placeholder">Document what the first-time guidance shows, how it works, and how it helps a child start playing.</p>
+            <h3>Eight Colourful Keys</h3>
+            <p>The heart of PopNotes is a row of eight colourful keys, shared by both modes.</p>
+            <ul class="documentation-feature-list">
+                <li>The keys <strong>A S D F G H J K</strong> on a computer keyboard play one octave, from C4 to C5.</li>
+                <li>Each piano key has its own distinct colour, which corresponds to the visual representation of notes in Free Play Mode, as well as the colour of the guiding orbs in Learning Mode.</li>
+                <li>Keys can also be pressed with a mouse or a finger on a touchscreen.</li>
+                <li>Two switches can show <strong>keyboard letters</strong> (on by default) or <strong>solfege names</strong> (Do, Re, Mi…) on each key.</li>
+            </ul>
+            <p>Toddlers lack reading skills, so colour does the work that labels usually do. The two optional label switches offer opportunities for further learning and more advanced interaction beyond the basic functions.</p>
+            <p>Eight natural notes are sufficient to cover basic, simple children’s songs, and they are arranged in a single row, ensuring that users do not face the obstacle of having to search across the whole keyboard.</p>
 
-            <h3>Free Play Mode</h3>
-            <p class="assignment-placeholder">Explain key input, sound, dynamic light bars and the feedback a child sees when pressing, holding and releasing a key.</p>
+            <h3>Friendly Onboarding Guides</h3>
+            <p>Proactive guidance introduces toddlers to unfamiliar operations before they begin independent play. Unlike experienced adult users, young children may not recognise when help is available or know that they need to request it, so the system initiates support at the beginning of the experience.</p>
+            <p>Cartoon characters frame the guidance as a friendly invitation to play rather than a formal set of instructions. Their gestures communicate actions visually, supporting the project’s low-text interaction approach. Each step focuses on one operation to limit the amount of information presented at once, while the “skip” button lets the child leave the guide and explore independently.</p>
+
+            <h3>Free Play Mode: Light Bars</h3>
+            <p>Children can press any of the eight coloured keys to make a sound. Each key is connected to a light bar in a fixed position above it. The bar rises and brightens while the key is held, then returns to rest when released. Variations in height and segmented patterns make repeated interactions feel fresh while keeping the connection between each action and its response clear.</p>
 
             <h3>Learning Mode</h3>
-            <p class="assignment-placeholder">Explain song selection, visual prompts, progression and the no-failure approach.</p>
+            <p>Coloured circles on the display show which keys to play through their position and colour. A small white circle on the next key provides an additional cue. The circles only move forward when the correct key is pressed, so children can follow the sequence at their own pace rather than keep up with a preset tempo.</p>
+        </section>
 
-            <h3>Extended Technique</h3>
-            <p class="assignment-placeholder">Explain how randomness changes light-bar height and segment patterns, with a link to the relevant code.</p>
+        <section>
+            <h2>Extended Technique: Random</h2>
+            <p>PopNotes uses JavaScript’s <code>Math.random()</code> to add small, playful surprises to each press. Random changes how things look, never which note plays.</p>
+
+            <h3>Where Random Is Used: The Light Bars</h3>
+            <p>Every time a key is pressed in Free Play, its light bar is rebuilt with a new random shape.</p>
+            <h4>How it works</h4>
+            <p>A small helper function picks a random number between a minimum and a maximum:</p>
+            <img class="documentation-code-image" src="assets/images/random-between-code.svg" alt="The randomBetween JavaScript helper function">
+            <p>On each press, this helper sets five values for that key’s bar:</p>
+            <div class="documentation-table-wrap">
+                <table>
+                    <thead>
+                        <tr><th scope="col">What changes</th><th scope="col">Random range</th><th scope="col">What the child sees</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><th scope="row">Bar height</th><td>48%–91%</td><td>Some presses reach higher than others.</td></tr>
+                        <tr><th scope="row">Number of blocks</th><td>6–12</td><td>The bar is split into a different pattern.</td></tr>
+                        <tr><th scope="row">Block width and size</th><td>78%–100% width</td><td>Each block looks a little uneven, like stacked toy bricks.</td></tr>
+                        <tr><th scope="row">Rise speed</th><td>260–520 ms</td><td>Some bars pop up quickly; others float up.</td></tr>
+                        <tr><th scope="row">Glow speed</th><td>1.1–1.8 s</td><td>The bar’s gentle pulse while held is never quite the same.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>These values are passed to CSS as custom properties, such as <code>--bar-height</code>, and CSS handles the animation. Because the bar is rebuilt on every new press, even quick taps get a fresh response.</p>
+            <h4>Why it is designed this way</h4>
+            <p>If every press looked exactly the same, a toddler might lose interest after a few tries. Small random changes make pressing the same key bring something slightly new to discover, inviting the child to keep exploring.</p>
+            <p>The ranges are deliberately limited. Bars never get too short to notice or so tall that they look broken, and they never move so fast that they startle. As the code comment puts it, these limits keep the display from becoming “busy or startling”.</p>
+            <h4>Design decision</h4>
+            <p>Random never decides the sound. Each key always plays the same note in both modes. For a toddler, the most important connection is “my action causes this result”. If the same key played different notes each time, that link would break and the instrument could feel confusing. Random therefore adds variety on top of a stable foundation: the sound stays predictable, and the visuals stay surprising.</p>
+
+            <h3>Smaller Uses of Random</h3>
+            <p><strong>Shuffle Colours</strong> mixes up the key colours in a random order. If the shuffle lands on the same order, the colours shift by one, so the child always sees a change. Pitches stay where they are.</p>
+            <p><strong>Celebration cards</strong> in Learning Mode randomly pick a message, such as “So Good!”, “Well Done!” or “Good Job!”, so finishing a song feels a little different each time.</p>
         </section>
 
         <section>
