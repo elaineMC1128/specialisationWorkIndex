@@ -433,3 +433,26 @@ h3 + * {
 .documentation-page thead {
     background: color-mix(in srgb, var(--colour-link) 18%, var(--colour-2));
 }
+
+
+/* Design system guide preview */
+.design-guide-preview {
+    margin-block: 1.5rem 0;
+}
+
+.design-guide-preview a {
+    display: block;
+}
+
+.design-guide-preview img {
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--colour-1);
+    border-radius: 0.5rem;
+}
+
+.design-guide-preview figcaption {
+    margin-block-start: 0.5rem;
+    color: var(--colour-1);
+    font-size: 0.9rem;
+}
